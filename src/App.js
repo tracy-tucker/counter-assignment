@@ -5,17 +5,23 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    this.counterElement = React.createRef();
+    this.counterElement1 = React.createRef();
+    this.counterElement2 = React.createRef();
+    this.counterElement3 = React.createRef();
   }
 
   handleAllIncrease = () => {
     console.log("hello App Increase")
-    this.counterElement.current.handleIncrease();
+    this.counterElement1.current.handleIncrease();
+    this.counterElement2.current.handleIncrease();
+    this.counterElement3.current.handleIncrease();
   }
 
   handleAllDecrease = () => {
     console.log("hello App Decrease")
-    this.counterElement.current.handleDecrease();
+    this.counterElement1.current.handleDecrease();
+    this.counterElement2.current.handleDecrease();
+    this.counterElement3.current.handleDecrease();
   }
 
   render() {
@@ -23,9 +29,9 @@ class App extends React.Component {
       <div className="App">
         <button onClick={() => this.handleAllIncrease()}>Increase all</button>
         <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
-          <Counter  ref={this.counterElement}/>
-          <Counter  ref={this.counterElement}/>
-          <Counter  ref={this.counterElement}/>
+          <Counter  ref={this.counterElement1}/>
+          <Counter  ref={this.counterElement2}/>
+          <Counter  ref={this.counterElement3}/>
       </div>
     );
   }
