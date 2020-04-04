@@ -9,11 +9,11 @@ class Counter extends React.Component {
     }
 
     handleIncrease = () => {
-        //
+        console.log("hello increase")
     }
 
     handleDecrease = () => {
-        //
+        console.log("hello decrease")
     }
 
     render() {
