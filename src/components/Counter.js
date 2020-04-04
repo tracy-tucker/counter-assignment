@@ -3,14 +3,25 @@ import React from 'react';
 
 class Counter extends React.Component {
 
+
     state = {
         num: 0,
+    }
+
+    handleIncrease = () => {
+        //
+    }
+
+    handleDecrease = () => {
+        //
     }
 
     render() {
         return (
             <div>
-                Counter
+                <p>{this.state.num}</p>
+                <button>+</button>
+                <button>-</button>
             </div>
         )
     }
@@ -33,6 +44,7 @@ export default Counter;
 
 // STEPS
 
+// 1. add <p> element with in div to render state
 // 1. create button elements - one for + and other for -
 // 2. set the initial state to zero
 // 2. create 2 functions - one for increment, one for decrement
