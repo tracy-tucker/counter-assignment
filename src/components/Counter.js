@@ -45,8 +45,12 @@ export default Counter;
 // STEPS
 
 // 1. add <p> element with in div to render state
-// 1. create button elements - one for + and other for -
-// 2. set the initial state to zero
-// 2. create 2 functions - one for increment, one for decrement
-// 3a. add event change handler to each button
-// 3b. call the function (include function name) for each corresponding button
+// 2. create button elements - one for + and other for -
+// 3. set the initial state to zero
+// 4. create 2 functions - one for increment, one for decrement
+// 5a. add event change handler to each button
+// 5b. add the function (include function name) for each corresponding button
+
+// FUNCTION STEPS
+
+// 1. 
