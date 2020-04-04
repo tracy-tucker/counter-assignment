@@ -3,12 +3,25 @@ import Counter from './components/Counter';
 
 class App extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.counterElement = React.createRef();
+  }
+
+  handleAllIncrease = () => {
+    console.log("hello App Increase")
+  }
+
+  handleAllDecrease = () => {
+    console.log("hello App Decrease")
+  }
+
   render() {
     return (
       <div className="App">
-        <button>Increase all</button>
-        <button>Decrease all</button>
-          <Counter />
+        <button onClick={() => this.handleAllIncrease()}>Increase all</button>
+        <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
+          <Counter ref={this.counterElement}/>
           <Counter />
           <Counter />
       </div>
@@ -32,3 +45,4 @@ export default App;
 // 3. add an event handler to each button referencing corres. function
 // 4. Reference the childComponent - use createRef in constructor
 // 5. Add ref to <Counter />
+// 6. FUNCTION - reference the counterElement and call the corres child element
