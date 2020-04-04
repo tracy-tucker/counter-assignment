@@ -20,8 +20,8 @@ class Counter extends React.Component {
         return (
             <div>
                 <p>{this.state.num}</p>
-                <button>+</button>
-                <button>-</button>
+                <button onClick={() => this.handleIncrease()}>+</button>
+                <button onClick={() => this.handleDecrease()}>-</button>
             </div>
         )
     }
