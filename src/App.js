@@ -10,10 +10,12 @@ class App extends React.Component {
 
   handleAllIncrease = () => {
     console.log("hello App Increase")
+    this.counterElement.current.handleIncrease();
   }
 
   handleAllDecrease = () => {
     console.log("hello App Decrease")
+    this.counterElement.current.handleDecrease();
   }
 
   render() {
@@ -21,9 +23,9 @@ class App extends React.Component {
       <div className="App">
         <button onClick={() => this.handleAllIncrease()}>Increase all</button>
         <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
-          <Counter ref={this.counterElement}/>
-          <Counter />
-          <Counter />
+          <Counter  ref={this.counterElement}/>
+          <Counter  ref={this.counterElement}/>
+          <Counter  ref={this.counterElement}/>
       </div>
     );
   }
