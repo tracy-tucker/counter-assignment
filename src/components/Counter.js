@@ -42,12 +42,9 @@ export default Counter;
 // 1. Create a plus button and a minus button
 // a. Clicking on plus increases count, click on minus decreases count.
 
-// BONUS
 
-// 1. Page has 2 extra buttons
-// a. Clicking on "increase all" will increase the count by 1 on all the counters
-// b. Clicking on "decrease all" will decrease the count by 1 on all the counters
 // SEE APP FOR FOR BONUS STEPS
+
 
 // STEPS
 
