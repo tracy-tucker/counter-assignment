@@ -4,11 +4,7 @@ import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App>
-      <Counter />
-      <Counter />
-      <Counter />
-    </App>
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
