@@ -10,10 +10,16 @@ class Counter extends React.Component {
 
     handleIncrease = () => {
         console.log("hello increase")
+        this.setState({
+            num: this.state.num + 1,
+        })
     }
 
     handleDecrease = () => {
         console.log("hello decrease")
+        this.setState({
+            num: this.state.num - 1,
+        })
     }
 
     render() {
@@ -53,4 +59,6 @@ export default Counter;
 
 // FUNCTION STEPS
 
-// 1. 
+// 1. access the initial state
+// 2. add/subtract the state by 1.
+// 3. set new state
