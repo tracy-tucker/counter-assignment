@@ -13,6 +13,7 @@ class Counter extends React.Component {
         this.setState({
             num: this.state.num + 1,
         })
+
     }
 
     handleDecrease = () => {
@@ -26,8 +27,8 @@ class Counter extends React.Component {
         return (
             <div>
                 <p>{this.state.num}</p>
-                <button onClick={() => this.handleIncrease()}>+</button>
-                <button onClick={() => this.handleDecrease()}>-</button>
+                <button onClick={this.handleIncrease}>+</button>
+                <button onClick={this.handleDecrease}>-</button>
             </div>
         )
     }

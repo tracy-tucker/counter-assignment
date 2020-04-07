@@ -29,7 +29,7 @@ class App extends React.Component {
       <div className="App">
         <button onClick={() => this.handleAllIncrease()}>Increase all</button>
         <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
-          <Counter  ref={this.counterElement1}/>
+          <Counter  ref={this.counterElement1} />
           <Counter  ref={this.counterElement2}/>
           <Counter  ref={this.counterElement3}/>
       </div>
