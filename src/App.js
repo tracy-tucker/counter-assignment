@@ -3,36 +3,53 @@ import Counter from './components/Counter';
 
 class App extends React.Component {
 
+  //Method called BEFORE anything else when component is initialized.
+  //Location to set initial state.
   constructor(props) {
     super(props);
-    this.counterElement1 = React.createRef();
-    this.counterElement2 = React.createRef();
-    this.counterElement3 = React.createRef();
+    this.state = {
+      counterA: 0,
+      counterB: 0,
+      counterC: 0
+    }
   }
 
+  //prevState - built-in React method that takes in state and props at the time the change is being applied.
   handleAllIncrease = () => {
     console.log("hello App Increase")
-    this.counterElement1.current.handleIncrease();
-    this.counterElement2.current.handleIncrease();
-    this.counterElement3.current.handleIncrease();
+    this.setState(prevState => ({
+      counterA: prevState.counterA + 1,
+      counterB: prevState.counterB + 1,
+      counterC: prevState.counterC + 1
+    }))
   }
 
   handleAllDecrease = () => {
-    console.log("hello App Decrease")
-    this.counterElement1.current.handleDecrease();
-    this.counterElement2.current.handleDecrease();
-    this.counterElement3.current.handleDecrease();
+    this.setState(prevState => ({
+      counterA: prevState.counterA - 1,
+      counterB: prevState.counterB - 1,
+      counterC: prevState.counterC - 1
+    }))
   }
 
+  //Fragments let you group a list of children without adding extra nodes to the DOM
+  // Best example: Table
   render() {
     return (
-      <div className="App">
-        <button onClick={() => this.handleAllIncrease()}>Increase all</button>
-        <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
-          <Counter  ref={this.counterElement1} />
-          <Counter  ref={this.counterElement2}/>
-          <Counter  ref={this.counterElement3}/>
-      </div>
+      // fragment
+      <>
+        <div className="App">
+          {/* state variables passed to the local counter components */}
+            <Counter  counter={this.state.counterA} /> 
+            <Counter  counter={this.state.counterB} />
+            <Counter  counter={this.state.counterC} />
+        </div>
+        <br />
+        <div>
+          <button onClick={() => this.handleAllIncrease()}>Increase all</button>
+          <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
+        </div>
+      </>
     );
   }
 }

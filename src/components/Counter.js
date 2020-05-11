@@ -3,30 +3,34 @@ import React from 'react';
 
 class Counter extends React.Component {
 
-
-    state = {
-        num: 0,
+    //Setting initial state
+    //super(props) - Referecing the parent class constructor, assigning this to props
+    constructor(props) {
+        super(props);
+        this.state = {
+            num: 0,
+        };
     }
 
     handleIncrease = () => {
         console.log("hello increase")
-        this.setState({
-            num: this.state.num + 1,
-        })
-
-    }
+        this.setState(prevState => ({
+            num: prevState.num + 1,
+        }));
+    };
 
     handleDecrease = () => {
         console.log("hello decrease")
-        this.setState({
-            num: this.state.num - 1,
-        })
-    }
+        this.setState(prevState => ({
+            num: prevState.num - 1,
+        }));
+    };
 
     render() {
         return (
             <div>
-                <p>{this.state.num}</p>
+                {/* Whatever value that passes in from the parent is added to the current state value */}
+                <p>{this.state.num + this.props.counter}</p>
                 <button onClick={this.handleIncrease}>+</button>
                 <button onClick={this.handleDecrease}>-</button>
             </div>
