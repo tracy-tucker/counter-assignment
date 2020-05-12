@@ -5,6 +5,7 @@ class App extends React.Component {
 
   //Method called BEFORE anything else when component is initialized.
   //Location to set initial state.
+  //this.state = local state of class App
   constructor(props) {
     super(props);
     this.state = {
@@ -14,6 +15,8 @@ class App extends React.Component {
     }
   }
 
+  //setState - (see extra notes) a request that tells React that this component and its children need to be re-rendered with the updated state.
+  //React does not guarantee the update will be immediate - never read this.state right after calling setState.
   //prevState - built-in React method that takes in state and props at the time the change is being applied.
   handleAllIncrease = () => {
     console.log("hello App Increase")
@@ -24,6 +27,8 @@ class App extends React.Component {
     }))
   }
 
+  // => binds this to the enclosing lexical scope: class/function component. A quicker way of writing IIFE.
+  // subsequent calls will override values from previous calls in the same cycle.
   handleAllDecrease = () => {
     this.setState(prevState => ({
       counterA: prevState.counterA - 1,
@@ -46,6 +51,8 @@ class App extends React.Component {
         </div>
         <br />
         <div>
+          {/* onClick = HTML attribute
+          => - binding this to the onClick event. the same a writing this.handleAllIncrease.bind */}
           <button onClick={() => this.handleAllIncrease()}>Increase all</button>
           <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
         </div>

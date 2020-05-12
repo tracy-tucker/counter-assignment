@@ -3,6 +3,7 @@ import React from 'react';
 
 class Counter extends React.Component {
 
+    //Method called BEFORE anything else when component is initialized.
     //Setting initial state
     //super(props) - Referecing the parent class constructor, assigning this to props
     constructor(props) {
@@ -26,6 +27,9 @@ class Counter extends React.Component {
         }));
     };
 
+    //Mounting/Updating Phase
+    //Only method that is required of class components. It inspects this.props and this.state.
+    //elements, arrays and fragments, portals, string and numbers, Boolean or null.
     render() {
         return (
             <div>
