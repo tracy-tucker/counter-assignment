@@ -3,9 +3,11 @@ import Counter from './components/Counter';
 
 class App extends React.Component {
 
-  //Method called BEFORE anything else when component is initialized.
-  //Location to set initial state.
-  //this.state = local state of class App
+  // Constructor(props)
+  // Method called BEFORE anything else when component is initialized.
+  // super(props) - passes in inheritence from parent component
+  // Location to set initial state.
+  // this.state = local state of class App component
   constructor(props) {
     super(props);
     this.state = {
@@ -37,11 +39,16 @@ class App extends React.Component {
     }))
   }
 
-  //Fragments let you group a list of children without adding extra nodes to the DOM
-  // Best example: Table
+  //setState - This is request is done in a batch for asynchronous updates.
+  //if setState were done synchronously, then props would not update.
+
+  //render() - Mounting/Updating phase. Only required method for class components
+  //inspects this.props and this.state and returns a type
+  //React elements | Arrays & fragments | Portals | Strings & numbers | Booleans or null
   render() {
     return (
-      // fragment
+      // Fragments let you group a list of children without adding extra nodes to the DOM
+      // Best example: Table
       <>
         <div className="App">
           {/* state variables passed to the local counter components */}
@@ -52,7 +59,9 @@ class App extends React.Component {
         <br />
         <div>
           {/* onClick = HTML attribute
-          => - binding this to the onClick event. the same a writing this.handleAllIncrease.bind */}
+          => - no binding of *this* (Does not have its own *this*)
+          The *this* keyword ALWAYS represents the object that DEFINED the => 
+          *this* belongs to the lexically enclosing function. */}
           <button onClick={() => this.handleAllIncrease()}>Increase all</button>
           <button onClick={() => this.handleAllDecrease()}>Decrease all</button>
         </div>
